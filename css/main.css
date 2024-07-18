@@ -1,0 +1,275 @@
+:root {
+    --main-color: #2196f3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.game {
+    background-color: #eee;
+    min-height: 100vh;
+}
+
+.name {
+    background-color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
+.container {
+    margin:auto;
+    max-width: 900px;
+    height: 100%;
+}
+
+.diff-levels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.diff-levels h3 {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.diff {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.diff div {
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.diff .easy {
+    background-color: #008037;
+}
+
+.diff .medium {
+    background-color: #f39c12;
+}
+
+.diff .hard {
+    background-color: #e74c3c;
+}
+
+.diff div:hover {
+    transform: scale(1.1);
+}
+
+.diff div:active {
+    transform: scale(0.9);
+}
+
+.message {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.message span {
+    font-size: 18px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.message span::before {
+    content: "[ ";
+    color: #008037;
+    font-weight: bold;
+}
+
+.message span::after {
+    content: " ]";
+    color: #008037;
+    font-weight: bold;
+}
+
+.start {
+    background-color: #008037b1;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+.start:hover {
+    cursor: pointer;
+}
+
+.word {
+    color: var(--main-color);
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 15px 0;
+    user-select: none;
+}
+
+input {
+    width: 100%;
+    min-height: 45px;
+    border: 3px solid var(--main-color);
+    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+input:focus {
+    caret-color: white;
+    outline: none;
+    background-color: var(--main-color);
+    color: white;
+    text-transform: capitalize;
+}
+
+input:disabled {
+    background-color: #ddd;
+    color: #666;
+}
+
+.upcoming-words {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: 55px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.upcoming-words div {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 8px;
+    border-radius: 10px;
+    user-select: none;
+    margin: 5px;
+}
+
+.control {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    color:#008037;
+    font-weight: bold;
+}
+
+.control span {
+    color: var(--main-color);
+    font-weight: 900;
+}
+
+.finish {
+    margin: 15px 0;
+    background-color: white;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 20px;
+    display: none;
+}
+
+.finish .win{
+    background-color: green;
+    animation: bounce 2s infinite;
+}
+
+.finish .lose {
+    background-color: rgb(255, 0, 0);
+    animation: vibrate 2s infinite;
+}
+
+.finish .win, .finish .lose {
+    text-align: center;
+    font-size: 20px;
+    border-radius: 30px;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.play-again {
+    background-color: #008037b1 ;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 0;
+    border-radius: 15px;
+}
+
+.play-again:hover {
+    cursor: pointer;
+}
+
+/* make the win div bouncing */
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);   
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* vibrate the lose div */ 
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(-10px);
+    }
+}
+
+
